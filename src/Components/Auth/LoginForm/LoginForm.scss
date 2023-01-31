@@ -57,6 +57,9 @@
         }
     }
     &__button {
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
         .ui.button {
                 width: 10rem;
                 background: linear-gradient(144deg,#af40ff,#5b42f3 50%,#00ddeb);
