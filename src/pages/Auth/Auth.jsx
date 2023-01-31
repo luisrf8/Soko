@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import AuthOptions from '../../Components/Auth/AuthOptions'
 import LoginForm from '../../Components/Auth/LoginForm'
 import RegisterForm from '../../Components/Auth/RegisterForm'
+import Topbar from '../../Components/Topbar'
 
 import "./Auth.scss"
 
@@ -19,6 +20,7 @@ export default function Auth() {
   }
   return (
     <div className='auth' style={{backgroundcolor: '#ffff'}}>
+      <Topbar />
       <div className='auth__dark'/>
       <div className='auth__box'>
         {handlerForm()}

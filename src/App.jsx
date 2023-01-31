@@ -4,6 +4,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import firebase from './Utils/Firebase';
 import 'firebase/compat/auth'
 import Auth from './pages/Auth/Auth';
+import Landing from './pages/Landing/Landing';
 import LoggedLayout from './Components/Auth/Layouts/LoggedLayout';
 import Topbar from './Components/Topbar/Topbar';
 
@@ -31,8 +32,7 @@ function App() {
     // }
   return (
     <>
-    <Topbar />
-      {!user ? <Auth/> : <LoggedLayout user={user}/>}
+      {!user ? <Auth /> : <LoggedLayout user={user}/>}
       <ToastContainer 
         position='top-center'
         autoClose = {5000}

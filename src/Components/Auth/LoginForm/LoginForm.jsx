@@ -21,25 +21,15 @@ export default function LoginForm(props) {
   };
 
   const onChange = e => {
-    // console.log("Name: " + e.target.name);
-    // console.log("Value: " + e.target.value);
     setFormData({
       ...formData, [e.target.name]: e.target.value,
     })
   }
 
   const onSubmit = () => {
-    // console.log("Login...");
-    // console.log(formData);
     setFormError({})
     let errors = {}
     let formOk = true
-    // esto es para tener la validacion por email
-    // if(!validateEmail(formData.email)) {
-    //   errors.email = true; 
-    //   formOk = false; 
-    // }
-    // end esto es para tener la validacion por email
     if(!formData.email) {
       errors.email = true; 
       formOk = false; 
@@ -63,19 +53,18 @@ export default function LoginForm(props) {
       })
       .finally(() => {
         setIsLoading(false);
-        // setSelectedForm(null);
       })
     }
   };
   return (
+    <div>
     <div className="login-form">
-      <h1>Musica para todos</h1>
       <Form onSubmit={onSubmit} onChange={onChange}>
         <Form.Field>
           <Input
             type="text"
             name="email"
-            placeholder="Correo Electronico"
+            placeholder="Ingrese su correo"
             icon="mail outline"
             error={formError.email}
           />
@@ -109,17 +98,12 @@ export default function LoginForm(props) {
             </span>
           )}
         </Form.Field>
-        <Button type="submit" loading = {isLoading}>Continuar</Button>
+        
       </Form>
-
-      {!userActive && (
-        <buttonResetSendEmailVerification
-          user={user}
-          setIsLoading={setIsLoading}
-          setUserActive={setUserActive}
-        />
-      )}
-
+    </div>
+    <div className="login-form__button">
+      <Button type="submit" className="continue-button" loading = {isLoading}>Continuar</Button>
+    </div>
       <div className="login-form__options">
         <p
           onClick={() => {
@@ -128,49 +112,16 @@ export default function LoginForm(props) {
         >
           Volver
         </p>
-        <p>
-          ¿No tienes cuenta?{" "}
-          <span
-            onClick={() => {
-              setSelectedForm("register");
-            }}
-          >
-            Registrarse
-          </span>
-        </p>
       </div>
     </div>
+
   );
 }
-function buttonResetSendEmailVerification (props) {
-  const { user, setIsLoading, setUserActive } = props;
-
-  const resendEmailVerification = () => {
-    user.sendEmailVerification().then(() => {
-      toast.success("se ha enviado el correo correctamente")
-    })
-    .catch((err) => {
-      console.log("dsadsad")
-      handlerErrors(err.code)
-    })
-    .finally(() => {
-      setIsLoading(false);
-      setUserActive(null); 
-    })
-  }
-  return (
-    <div className="resend-verification">
-      <p>
-        Si no has recibido el email de verificacion, puedes volver a envialo <span onClick={resendEmailVerification}>aqui</span>
-      </p>
-    </div>
-  )
-} 
 
 function handlerErrors(code) {
   switch (code) {
     case "auth/wrong-password": 
-    toast.warning("contraseña incorrect")
+      toast.warning("contraseña incorrect")
     break;
     case "auth/too-manu-request":
       toast.warning("has intentado demasiadas veces")
