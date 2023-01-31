@@ -41,7 +41,6 @@ function App() {
         pauseOnVisibilityChange
         draggable
         pauseOnHover = {false}
-        
       />
     </>
   );
