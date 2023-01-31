@@ -5,6 +5,7 @@ import firebase from './Utils/Firebase';
 import 'firebase/compat/auth'
 import Auth from './pages/Auth/Auth';
 import LoggedLayout from './Components/Auth/Layouts/LoggedLayout';
+import Topbar from './Components/Topbar/Topbar';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -30,6 +31,7 @@ function App() {
     // }
   return (
     <>
+    <Topbar />
       {!user ? <Auth/> : <LoggedLayout user={user}/>}
       <ToastContainer 
         position='top-center'
@@ -45,7 +47,6 @@ function App() {
     </>
   );
 }
-
 
 
 export default App;
