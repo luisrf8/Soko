@@ -41,7 +41,8 @@ export default function LoginForm(props) {
     setFormError(errors);
 
     if (formOk) {
-      setIsLoading(true);
+      console.log(formData)
+      setIsLoading(true)
       firebase.auth( ).signInWithEmailAndPassword(formData.email, formData.password)
       .then(response => {
         console.log(response.user)
@@ -102,7 +103,7 @@ export default function LoginForm(props) {
       </Form>
     </div>
     <div className="login-form__button">
-      <Button type="submit" className="continue-button" loading = {isLoading}>Continuar</Button>
+      <Button type="submit" onClick ={onSubmit} className="continue-button" loading = {isLoading}>Continuar</Button>
     </div>
       <div className="login-form__options">
         <p

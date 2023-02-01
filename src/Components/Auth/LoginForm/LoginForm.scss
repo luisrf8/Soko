@@ -1,15 +1,9 @@
 @import "../../../scss/index.scss";
 
 .login-form {
-    margin-top: 50px;
+    margin-top: 30%;
     display: flex;
     justify-content: center;
-    h1{
-        color: $font-purple;
-        text-align: center;
-        font-size: 35px;
-        padding-bottom: 20px;
-    }
 
     .ui.form {
         .field {
@@ -20,9 +14,11 @@
                     justify-items: center;
                     background-color: transparent;
                     border: 0;
-                    border-bottom: 2px solid $font-purple;
+                    // border-bottom: 2px solid $font-purple;
+                    border-bottom: 1px solid #e91a4a;
+                    border-radius: 0;
                     font-size: 16px;
-                    color: $font-purple;
+                    // color: $font-purple;
                 }
                 i {
                     color: $font-light;
@@ -61,27 +57,21 @@
         justify-content: center;
         margin-top: 25px;
         .ui.button {
-                width: 10rem;
-                background: linear-gradient(144deg,#af40ff,#5b42f3 50%,#00ddeb);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 8rem;
+                height: 2.5rem;
+                // background: linear-gradient(144deg,#af40ff,#5b42f3 50%,#00ddeb);
+                background-color: #e91a4a ;
                 color: $font-light;
                 text-transform: uppercase;
                 margin-top: 10px;
                 border-radius: 10px;
                 padding: 17px 0px;
                 font-size: 14px;
-                letter-spacing: 3px;
+                letter-spacing: 1px;
         }
-    }
-    .continue-button {
-        width: 10rem;
-        background: linear-gradient(144deg,#af40ff,#5b42f3 50%,#00ddeb);
-        color: $font-light;
-        text-transform: uppercase;
-        margin-top: 10px;
-        border-radius: 10px;
-        padding: 17px 0px;
-        font-size: 14px;
-        letter-spacing: 3px;
     }
     &__options {
         margin-top: 50px;

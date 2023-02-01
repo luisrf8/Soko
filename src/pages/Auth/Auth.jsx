@@ -20,7 +20,7 @@ export default function Auth() {
   }
   return (
     <div className='auth' style={{backgroundcolor: '#ffff'}}>
-      <Topbar />
+      {/* <Topbar /> */}
       <div className='auth__dark'/>
       <div className='auth__box'>
         {handlerForm()}
