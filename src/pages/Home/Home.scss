@@ -1,5 +1,260 @@
-@import "../../../../scss/index.scss";
+// @import "../../../../scss/index.scss";
 
-.home {
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+    }
+    /* Estilos de la cabecera */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
     
-}
+    .header h1 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333333;
+    }
+    
+    .cta-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4285f4;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    }
+    
+    .cta-btn:hover {
+    background-color: #3367d6;
+    }
+    
+    /* Estilos de la presentación */
+    .presentation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #f2f2f2;
+    }
+    
+    .presentation-content {
+    max-width: 50%;
+    }
+    
+    .presentation-content h2 {
+    font-size: 36px;
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 20px;
+    }
+    
+    .presentation-content p {
+    font-size: 18px;
+    color: #555555;
+    line-height: 1.5;
+    }
+    
+    .presentation-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+    }
+    
+    /* Estilos de los ejemplos */
+    .examples {
+    padding: 50px 20px;
+    background-color: #f2f2f2;
+
+    }
+    
+    .examples h2 {
+    font-size: 36px;
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 20px;
+    }
+    
+    .examples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    margin-top: 40px;
+    }
+    
+    .example {
+    position: relative;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-radius: 30px;
+    }
+    
+    .example:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    .example img {
+    width: 100%;
+    height: auto;
+    }
+    
+    .example p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    }
+    
+    /* Estilos de los detalles del ejemplo */
+    .example-details {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    }
+    
+    .example-details-content {
+    background-color: #ffffff;
+    padding: 40px;
+    max-width: 50%;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+    .example-details-content img {
+        width: 100%;
+        height: auto;
+        }
+        .example-details-content h3 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #333333;
+            margin-bottom: 20px;
+            }
+            
+            .example-details-content p {
+            font-size: 18px;
+            color: #555555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            }
+            
+            .example-details-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            font-weight: 500;
+            color: #333333;
+            cursor: pointer;
+            }
+            
+            .example-details-close:hover {
+            color: #ff0000;
+            }
+            
+            @media (max-width: 768px) {
+            .presentation {
+            flex-direction: column;
+            align-items: center;
+            }
+            
+            .presentation-content {
+            max-width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+            }
+            
+            .examples-grid {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            }
+
+            .brand-concepts {
+                margin-bottom: 40px;
+              }
+              
+              .brand-concepts h2 {
+                margin-bottom: 10px;
+              }
+              
+              .brand-concepts ul {
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+              }
+              
+              .brand-concepts li {
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+                flex-basis: calc(50% - 10px);
+                margin: 5px;
+                padding: 10px;
+                text-align: center;
+                transition: transform 0.2s ease-in-out;
+              }
+              
+              .brand-concepts li:hover {
+                transform: translateY(-5px);
+              }
+              .how-we-work {
+                background-color: #f7f7f7;
+                padding: 60px 0;
+              }
+              
+              .how-we-work h2 {
+                font-size: 36px;
+                font-weight: bold;
+                margin-bottom: 30px;
+              }
+              
+              .how-we-work p {
+                font-size: 20px;
+                line-height: 1.5;
+                margin-bottom: 30px;
+              }
+              
+              .how-we-work ol {
+                list-style-type: decimal;
+                font-size: 20px;
+                line-height: 1.5;
+                margin-bottom: 30px;
+                margin-left: 30px;
+              }
+              
+              .how-we-work ol li {
+                margin-bottom: 10px;
+              }
+              
+              .how-we-work h2:last-of-type {
+                margin-top: 60px;
+                margin-bottom: 30px;
+              }
